@@ -6,7 +6,15 @@ import { UnifiedHeader } from "@/components/layout/UnifiedHeader";
 import { getOwnerSession } from "@/lib/auth/ownerSession";
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
-  const session = await getOwnerSession();
+  let session = null;
+
+  try {
+    session = await getOwnerSession();
+  } catch (err) {
+    // Treat session parsing/verification errors as "not signed in"
+    session = null;
+  }
+
   if (!session) redirect("/owner-signin");
 
   return (
