@@ -371,7 +371,7 @@ export default async function HomePage() {
 
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="wallet">
-            <AccordionTrigger>Do i need a wallet to send a ping?</AccordionTrigger>
+            <AccordionTrigger>Do i need a wallet to send a Tip?</AccordionTrigger>
             <AccordionContent>
               only if you're actually tryna reach someone bestie 💅 
               no wallet = no pay = no ping. 
@@ -450,7 +450,7 @@ export default async function HomePage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Button asChild variant="brand">
-              <Link href="/ping">Send a ping</Link>
+              <Link href="/ping">Send a Tip</Link>
             </Button>
             {session ? (
               <>

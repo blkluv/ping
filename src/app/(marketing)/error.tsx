@@ -28,7 +28,7 @@ export default function Error({
             <Link href="/">Home</Link>
           </Button>
           <Button asChild variant="ghost">
-            <Link href="/ping">Send a ping</Link>
+            <Link href="/ping">Send a Tip</Link>
           </Button>
         </CardContent>
       </Card>

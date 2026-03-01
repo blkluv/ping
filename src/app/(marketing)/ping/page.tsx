@@ -19,11 +19,11 @@ export default async function PingLandingPage({
     <div className="mx-auto max-w-3xl space-y-8">
       <header className="space-y-3">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="secondary">Paid pings</Badge>
-          <Badge variant="secondary">Solana settlement</Badge>
-          <Badge variant="secondary">x402 (HTTP 402)</Badge>
+          <Badge variant="secondary">Social</Badge>
+          <Badge variant="secondary">Solana Tips</Badge>
+          <Badge variant="secondary">W/ No Middleman</Badge>
         </div>
-        <h1 className="h2">Send a ping</h1>
+        <h1 className="h2">Send a Tip</h1>
         <p className="lead">
           Enter a creator handle to open their public inbox, choose a tier, and send a paid
           message.

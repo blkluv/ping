@@ -18,7 +18,7 @@ export default function NotFound() {
             <Link href="/">Home</Link>
           </Button>
           <Button asChild>
-            <Link href="/ping">Send a ping</Link>
+            <Link href="/ping">Send a Tip</Link>
           </Button>
         </CardContent>
       </Card>
