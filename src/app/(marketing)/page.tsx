@@ -15,7 +15,14 @@ import { isSolanaDevnet, solanaNetworkLabel } from "@/lib/solana/chain";
 import { getYouTubeVideoId } from "@/lib/utils/youtube";
 
 export default async function HomePage() {
-  const session = await getOwnerSession();
+  let session = null;
+
+  try {
+    session = await getOwnerSession();
+  } catch {
+    session = null;
+  }
+
   const env = getEnvServer();
   const networkLabel = solanaNetworkLabel(env.X402_NETWORK);
   const isDevnet = isSolanaDevnet(env.X402_NETWORK);
