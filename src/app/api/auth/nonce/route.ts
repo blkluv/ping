@@ -1,26 +1,26 @@
-import { NextResponse } from "next/server";
-import { nanoid } from "nanoid";
-
-import { storeAuthNonce } from "@/lib/db/convex/server";
-import { getEnvServer } from "@/lib/env/env.server";
-import { logger } from "@/lib/observability/logger";
-
 export async function POST(req: Request) {
-  const requestId = req.headers.get("x-request-id") ?? "unknown";
-  const nonce = nanoid(24);
-  const createdAt = Date.now();
+  try {
+    const requestId = req.headers.get("x-request-id");
+    const nonce = nanoid(24);
+    const createdAt = Date.now();
 
-  await storeAuthNonce({ nonce, createdAt });
+    await storeAuthNonce({ nonce, createdAt });
 
-  const env = getEnvServer();
-  const chainId = env.X402_NETWORK;
+    const env = getEnvServer();
+    const chainId = env.X402_NETWORK;
 
-  logger.info({ requestId }, "ping402.auth.nonce_issued");
+    return NextResponse.json({
+      nonce,
+      issuedAt: new Date(createdAt).toISOString(),
+      chainId,
+      requestId,
+    });
 
-  return NextResponse.json({
-    nonce,
-    issuedAt: new Date(createdAt).toISOString(),
-    chainId,
-    requestId,
-  });
+  } catch (error) {
+    console.error("Nonce route error:", error);
+    return NextResponse.json(
+      { error: "Failed to generate nonce" },
+      { status: 500 }
+    );
+  }
 }
