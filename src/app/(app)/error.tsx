@@ -1,11 +1,11 @@
 "use client";
-import "@/styles/globals.css" 
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Error({
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
@@ -18,6 +18,10 @@ export default function Error({
           <CardTitle className="text-base">Something went wrong</CardTitle>
           <p className="text-sm text-muted-foreground">
             Try again, or head back to your inbox.
+          </p>
+          {/* TEMP: show the actual error while debugging */}
+          <p className="text-xs text-muted-foreground break-words">
+            {error?.message}
           </p>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
@@ -35,4 +39,3 @@ export default function Error({
     </div>
   );
 }
-
