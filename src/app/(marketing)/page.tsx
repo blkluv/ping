@@ -59,10 +59,10 @@ export default async function HomePage() {
             </div>
 
             <div className="space-y-3">
-              <h1 className="h1">🤑 Get off read receipts and onto REAL receipts</h1>
+              <h1 className="h1">💰The way my bank account is set up…</h1>
               <p className="lead">
-                TipMe.bio lets you pay $0.01–$0.25 to skip the line and actually get a reply. 
-                no spam. no subs. just proof it happened.
+                My attention isn’t free anymore. TipMe.bio lets you pay
+                 $0.01–$0.25 to get a reply. 
               </p>
             </div>
 
