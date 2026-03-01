@@ -522,7 +522,7 @@ export function UnifiedHeaderClient({ session }: { session: Session }) {
                     priority
                   />
                 </span>
-                <span>ping402</span>
+                <span>TipMe.bio</span>
               </Link>
 
 	              <nav className="grid gap-2">
@@ -571,7 +571,7 @@ export function UnifiedHeaderClient({ session }: { session: Session }) {
 
 	              <div className="grid gap-2">
 	                <Button asChild variant="brand">
-	                  <Link href="/ping">Send a ping</Link>
+	                  <Link href="/ping">Send a tip</Link>
 	                </Button>
 	                {!session ? (
 	                  !connectedAddress ? (
@@ -627,7 +627,7 @@ export function UnifiedHeaderClient({ session }: { session: Session }) {
               priority
             />
           </span>
-          <span className="hidden sm:inline">ping402</span>
+          <span className="hidden sm:inline">tipme.bio</span>
         </Link>
 
 	        <nav className="hidden items-center gap-1 md:flex">
@@ -845,7 +845,7 @@ export function UnifiedHeaderClient({ session }: { session: Session }) {
           )}
 
           <Button asChild variant="brand" size="sm" className="hidden sm:inline-flex">
-            <Link href="/ping">Send a ping</Link>
+            <Link href="/ping">Send a tip</Link>
           </Button>
         </div>
       </div>

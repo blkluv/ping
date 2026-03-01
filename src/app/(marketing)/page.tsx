@@ -41,41 +41,41 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-24">
+      {/* Hero Section */}
       <section className="pt-6">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-start">
           <div className="space-y-6 animate-in fade-in-0 slide-in-from-bottom-4 duration-700">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">HTTP 402 · x402</Badge>
-              <Badge variant="secondary">Solana settlement</Badge>
+              <Badge variant="secondary">Web5</Badge>
+              <Badge variant="secondary">Solana Tips</Badge>
               <Badge variant="secondary">Claimable handles</Badge>
             </div>
 
             <div className="space-y-3">
-              <h1 className="h1">Paid pings that get answered.</h1>
+              <h1 className="h1">🤑 Get off read receipts and onto REAL receipts</h1>
               <p className="lead">
-                ping402 turns “send a message” into a single, verifiable action. If you want
-                priority attention, you pay. If you pay, your ping is delivered—no
-                subscriptions, no spam, no guesswork.
+                TipMe.bio lets you pay $0.01–$0.25 to skip the line and actually get a reply. 
+                no spam. no subs. just proof it happened.
               </p>
             </div>
 
-	            <div className="flex flex-wrap gap-3">
-	              <Button asChild variant="brand" size="lg">
-	                <Link href="/ping">Send a ping</Link>
-	              </Button>
-	              <Button asChild variant="outline" size="lg">
-	                <Link href="/#how-it-works">How it works</Link>
-	              </Button>
-	              {session ? (
-	                <Button asChild variant="ghost" size="lg">
-	                  <Link href="/inbox">Open inbox</Link>
-	                </Button>
-	              ) : (
-	                <Button asChild variant="ghost" size="lg">
-	                  <Link href="/owner-signin">Claim a handle</Link>
-	                </Button>
-	              )}
-	            </div>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild variant="brand" size="lg">
+                <Link href="/ping">Send a Tip</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/#how-it-works">How it works</Link>
+              </Button>
+              {session ? (
+                <Button asChild variant="ghost" size="lg">
+                  <Link href="/inbox">Open inbox</Link>
+                </Button>
+              ) : (
+                <Button asChild variant="ghost" size="lg">
+                  <Link href="/owner-signin">Claim a handle</Link>
+                </Button>
+              )}
+            </div>
 
             <HandleSearch />
           </div>
@@ -86,6 +86,7 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Demo Video Section */}
       {demoEmbedSrc ? (
         <section id="demo-video" className="scroll-mt-24">
           <Card className="overflow-hidden bg-card/60 backdrop-blur">
@@ -100,7 +101,7 @@ export default async function HomePage() {
                 <iframe
                   className="h-full w-full"
                   src={demoEmbedSrc}
-                  title="ping402 demo video"
+                  title="tipme.bio demo video"
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -126,57 +127,60 @@ export default async function HomePage() {
         </section>
       ) : null}
 
+      {/* How It Works Section */}
       <section id="how-it-works" className="scroll-mt-24 space-y-8">
         <div className="space-y-2">
-          <h2 className="h3">How it works</h2>
+          <h2 className="h3">✨ How it works</h2>
           <p className="muted">
-            End-to-end is intentionally simple: paywall → proof → delivery.
+            Three clicks. zero confusion. actually works.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">1) Open a public inbox</CardTitle>
+              <CardTitle className="text-base">1) Grab your link</CardTitle>
               <p className="text-sm text-muted-foreground">
                 Every creator has a shareable link at{" "}
-                <code className="rounded bg-muted px-1 py-0.5">/u/[handle]</code>.
+                <code className="rounded bg-muted px-1 py-0.5">/u/[handle]</code> — put it in your bio, drop it in DMs, whatever..
               </p>
             </CardHeader>
           </Card>
 
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">2) Pick a tier</CardTitle>
+              <CardTitle className="text-base">2) Pick the vibe</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Standard, Priority, and VIP map to attention and urgency.
+                standard 🤷‍♀️ | priority ⚡ | vip 👑
+                more urgency = more attention. simple math.
               </p>
             </CardHeader>
           </Card>
 
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">3) Pay, then deliver</CardTitle>
+              <CardTitle className="text-base">3) Pay & it's delivered</CardTitle>
               <p className="text-sm text-muted-foreground">
-                The ping endpoint responds with HTTP 402 until it receives an{" "}
-                <code className="rounded bg-muted px-1 py-0.5">PAYMENT-SIGNATURE</code> proof
-                for a Solana transaction.
+                No payment? no ping. solana says{" "}
+                <code className="rounded bg-muted px-1 py-0.5">PAYMENT-SIGNATURE</code> proof,
+                then your message goes through.
               </p>
             </CardHeader>
           </Card>
         </div>
       </section>
 
+      {/* Funding Section */}
       <section id="funding" className="scroll-mt-24 space-y-8">
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
-            <h2 className="h3">Funding</h2>
+            <h2 className="h3">💰 Funding</h2>
             <Badge variant="secondary" className="capitalize">
               {networkLabel}
             </Badge>
           </div>
           <p className="muted">
-            You only pay when you send a ping. Keep enough balance for fees and the requested
+            You only pay when you send a Tip. Keep enough balance for fees and the requested
             token (shown at checkout).
           </p>
         </div>
@@ -184,7 +188,7 @@ export default async function HomePage() {
         <div className="grid gap-4 md:grid-cols-2">
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">Devnet</CardTitle>
+              <CardTitle className="text-base">Devnet (Currently BETA Testing)</CardTitle>
               <p className="text-sm text-muted-foreground">
                 Recommended for demos and testing. Use a faucet for devnet SOL.
               </p>
@@ -215,14 +219,14 @@ export default async function HomePage() {
 
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">Mainnet</CardTitle>
+              <CardTitle className="text-base">Mainnet (Launching When We Go Viral)</CardTitle>
               <p className="text-sm text-muted-foreground">
                 For real users. Ensure you have SOL for fees and the required token balance.
               </p>
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <p className="text-xs">
-                If you’re paying with a token (like a stablecoin), the paywall specifies the mint
+                If you're paying with a token (like a stablecoin), the paywall specifies the mint
                 and amount at checkout.
               </p>
               <p className="text-xs">
@@ -237,110 +241,112 @@ export default async function HomePage() {
         </p>
       </section>
 
+      {/* Use Cases Section */}
       <section className="space-y-8">
         <div className="space-y-2">
-          <h2 className="h3">Built for signal</h2>
+          <h2 className="h3">💀 E-mail inbox is cooked</h2>
           <p className="muted">
-            A paid inbox works anywhere attention is scarce.
+            A paid inbox solves e-mail inbox spam by replacing the "free" filter with a "paid" filter. Legitimate messages get through, low-effort spam doesn't.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">Founder inbox</CardTitle>
+              <CardTitle className="text-base">📱 Creators & Founders</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Filter inbound intros and requests without losing legitimate opportunities.
+                Stop letting "just wanted to connect" DMs bury actual opportunities. 
               </p>
             </CardHeader>
           </Card>
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">Support & escalation</CardTitle>
+              <CardTitle className="text-base">🚨 Security & On-call</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Replace “urgent” emails with a paid path that guarantees triage.
+                When everything is "urgent," nothing is. Paid Tips = real problems.
               </p>
             </CardHeader>
           </Card>
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">Security & on-call</CardTitle>
+              <CardTitle className="text-base">🛟 Support Teams</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Route high-signal issues to the top while leaving room for normal messages.
+                "This is an emergency!!!" — said everyone, about everything, always.
               </p>
             </CardHeader>
           </Card>
           <Card className="bg-card/60 backdrop-blur">
             <CardHeader className="space-y-2">
-              <CardTitle className="text-base">API-first workflows</CardTitle>
+              <CardTitle className="text-base">💅 Services</CardTitle>
               <p className="text-sm text-muted-foreground">
-                HTTP-native paywalls let agents and tools pay, retry, and deliver automatically.
+                Filter real potential customers from windows-shoppers with a paid inbox.
               </p>
             </CardHeader>
           </Card>
         </div>
       </section>
 
-	      <section id="tiers" className="scroll-mt-24 space-y-8">
-	        <div className="space-y-2">
-	          <h2 className="h3">Message tiers</h2>
-	          <p className="muted">
-	            Three tiers, one simple rule: higher tier → higher priority.
-	          </p>
-	        </div>
+      {/* Tiers Section */}
+      <section id="tiers" className="scroll-mt-24 space-y-8">
+        <div className="space-y-2">
+          <h2 className="h3">💌 Message tiers</h2>
+          <p className="muted">
+            Three tiers, one simple rule: higher tier → higher priority.
+          </p>
+        </div>
 
-	        <div className="grid gap-4 md:grid-cols-3">
-	          {PING_TIER_ORDER.map((tier) => {
-	            const meta = getPingTierConfig(tier);
-	            const variant =
-	              tier === "vip" ? "brand" : tier === "priority" ? "default" : "outline";
-	            const highlight = tier === "vip";
-	            const benefits = tierBenefits[tier];
+        <div className="grid gap-4 md:grid-cols-3">
+          {PING_TIER_ORDER.map((tier) => {
+            const meta = getPingTierConfig(tier);
+            const variant =
+              tier === "vip" ? "brand" : tier === "priority" ? "default" : "outline";
+            const highlight = tier === "vip";
+            const benefits = tierBenefits[tier];
 
-	            return (
-	              <Card
-	                key={tier}
-	                className={
-	                  highlight
-	                    ? "overflow-hidden border-primary/30 bg-card/60 shadow-md backdrop-blur"
-	                    : "bg-card/60 backdrop-blur"
-	                }
-	              >
-	                {highlight ? (
-	                  <div
-	                    className="h-1 w-full bg-gradient-to-r from-[rgb(var(--brand-purple-strong))] to-[rgb(var(--brand-green-strong))]"
-	                    aria-hidden="true"
-	                  />
-	                ) : null}
-	                <CardHeader className="space-y-4">
-	                  <div className="flex items-start justify-between gap-4">
-	                    <div className="space-y-1">
-	                      <CardTitle className="text-base">{meta.label}</CardTitle>
-	                      <div className="text-3xl font-semibold tracking-tight">
-	                        {meta.priceUsd}
-	                      </div>
-	                      <p className="text-sm text-muted-foreground">{meta.description}</p>
-	                    </div>
-	                    <Badge variant={highlight ? "default" : "secondary"}>{benefits.badge}</Badge>
-	                  </div>
-	                </CardHeader>
-	                <CardContent className="space-y-4">
-	                  <ul className="space-y-2 text-sm text-muted-foreground">
-	                    {benefits.bullets.map((bullet) => (
-	                      <li key={bullet} className="flex gap-2">
-	                        <Check className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
-	                        <span>{bullet}</span>
-	                      </li>
-	                    ))}
-	                  </ul>
-	                  <Button asChild variant={variant} className="w-full">
-	                    <Link href="/ping">Choose a creator</Link>
-	                  </Button>
-	                </CardContent>
-	              </Card>
-	            );
-	          })}
-	        </div>
+            return (
+              <Card
+                key={tier}
+                className={
+                  highlight
+                    ? "overflow-hidden border-primary/30 bg-card/60 shadow-md backdrop-blur"
+                    : "bg-card/60 backdrop-blur"
+                }
+              >
+                {highlight ? (
+                  <div
+                    className="h-1 w-full bg-gradient-to-r from-[rgb(var(--brand-purple-strong))] to-[rgb(var(--brand-green-strong))]"
+                    aria-hidden="true"
+                  />
+                ) : null}
+                <CardHeader className="space-y-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-1">
+                      <CardTitle className="text-base">{meta.label}</CardTitle>
+                      <div className="text-3xl font-semibold tracking-tight">
+                        {meta.priceUsd}
+                      </div>
+                      <p className="text-sm text-muted-foreground">{meta.description}</p>
+                    </div>
+                    <Badge variant={highlight ? "default" : "secondary"}>{benefits.badge}</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {benefits.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-2">
+                        <Check className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild variant={variant} className="w-full">
+                    <Link href="/ping">Choose a creator</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
 
         <p className="text-xs text-muted-foreground">
           Tiers are enforced by a paywalled endpoint at{" "}
@@ -354,47 +360,56 @@ export default async function HomePage() {
 
       <Separator />
 
+      {/* FAQ Section */}
       <section id="faq" className="scroll-mt-24 space-y-8">
         <div className="space-y-2">
-          <h2 className="h3">FAQ</h2>
+          <h2 className="h3">🙋🏽‍♀️ Wait but how tho</h2>
           <p className="muted">
-            The details behind a paid, spam-resistant inbox.
+            All the questions ur too afraid to ask (we got u)
           </p>
         </div>
 
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="wallet">
-            <AccordionTrigger>Do senders need a wallet?</AccordionTrigger>
+            <AccordionTrigger>Do i need a wallet to send a ping?</AccordionTrigger>
             <AccordionContent>
-              A wallet is only needed when the ping endpoint requires payment. If a request
-              hits an HTTP 402 paywall, the sender pays on Solana and the request retries with
-              proof.
+              only if you're actually tryna reach someone bestie 💅 
+              no wallet = no pay = no ping. 
+              but like... it takes 2 seconds to set one up and then ur in the club.
             </AccordionContent>
           </AccordionItem>
+          
           <AccordionItem value="x402">
-            <AccordionTrigger>What is x402?</AccordionTrigger>
+            <AccordionTrigger>OK but what even IS x402?</AccordionTrigger>
             <AccordionContent>
-              x402 is an HTTP-native payment flow: a server can respond with{" "}
-              <strong>402 Payment Required</strong> and payment requirements. A client (or UI)
-              pays, then retries the request with an{" "}
-              <code className="rounded bg-muted px-1 py-0.5">PAYMENT-SIGNATURE</code> proof.
+              think of it as the bouncer at the door 🚫 
+              no payment? no entry. 
+              the server literally says "402 Payment Required" until u pay, 
+              then it's like "oop—come on in bestie" and ur message goes through. 
+              simple math.
             </AccordionContent>
           </AccordionItem>
+          
           <AccordionItem value="creator-signin">
-            <AccordionTrigger>How do creators sign in?</AccordionTrigger>
+            <AccordionTrigger>How do i claim my @handle?</AccordionTrigger>
             <AccordionContent>
-              Creators pick a handle, connect a Solana wallet, and sign a message (no SOL
-              transfer). Handle claims are free, and a creator session cookie is set after
-              verification. The dashboard and inbox require that session.
+              connect ur wallet (phantom works, whatever u like), 
+              pick ur name, sign a message—NO money leaves ur account bestie it's free. 
+              then ur in the dashboard. that's literally it. 
+              no credit card, no 15-step verification, no cap.
             </AccordionContent>
           </AccordionItem>
+          
           <AccordionItem value="realtime">
-            <AccordionTrigger>Are messages realtime?</AccordionTrigger>
+            <AccordionTrigger>Does this actually work in real time?</AccordionTrigger>
             <AccordionContent>
-              Messages and stats are stored in Convex so the inbox updates quickly and reliably
-              without polling-heavy client code.
+              bestie we're not living in 2015 💀 
+              soon as the payment hits, ur inbox updates. 
+              no refreshing, no "pls wait 24 hours," 
+              just instant gratification like tiktok algorithm feeding u exactly what u want.
             </AccordionContent>
           </AccordionItem>
+
           <AccordionItem value="mainnet">
             <AccordionTrigger>Devnet or mainnet?</AccordionTrigger>
             <AccordionContent>
@@ -411,6 +426,7 @@ export default async function HomePage() {
               (mainnet).
             </AccordionContent>
           </AccordionItem>
+          
           <AccordionItem value="spam">
             <AccordionTrigger>What prevents spam?</AccordionTrigger>
             <AccordionContent>
@@ -421,37 +437,38 @@ export default async function HomePage() {
         </Accordion>
       </section>
 
-	      <section className="rounded-xl border bg-card/60 p-8 backdrop-blur">
-	        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-	          <div className="space-y-2">
-	            <h2 className="h4">Ready to get started?</h2>
-	            <p className="muted">
-	              {session
-	                ? "Jump back into your inbox, or share your public page."
-	                : "Find a creator inbox to send a paid ping, or claim your handle to start receiving them."}
-	            </p>
-	          </div>
-	          <div className="flex flex-wrap gap-3">
-	            <Button asChild variant="brand">
-	              <Link href="/ping">Send a ping</Link>
-	            </Button>
-	            {session ? (
-	              <>
-	                <Button asChild variant="outline">
-	                  <Link href="/inbox">Open inbox</Link>
-	                </Button>
-	                <Button asChild variant="ghost">
-	                  <Link href={`/u/${encodeURIComponent(session.handle)}`}>View public page</Link>
-	                </Button>
-	              </>
-	            ) : (
-	              <Button asChild variant="outline">
-	                <Link href="/owner-signin">Claim a handle</Link>
-	              </Button>
-	            )}
-	          </div>
-	        </div>
-	      </section>
-	    </div>
-	  );
+      {/* CTA Section */}
+      <section className="rounded-xl border bg-card/60 p-8 backdrop-blur">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-2">
+            <h2 className="h4">Ready to get started?</h2>
+            <p className="muted">
+              {session
+                ? "Jump back into your inbox, or share your public page."
+                : "Find a creator inbox to send a paid ping, or claim your handle to start receiving them."}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="brand">
+              <Link href="/ping">Send a ping</Link>
+            </Button>
+            {session ? (
+              <>
+                <Button asChild variant="outline">
+                  <Link href="/inbox">Open inbox</Link>
+                </Button>
+                <Button asChild variant="ghost">
+                  <Link href={`/u/${encodeURIComponent(session.handle)}`}>View public page</Link>
+                </Button>
+              </>
+            ) : (
+              <Button asChild variant="outline">
+                <Link href="/owner-signin">Claim a handle</Link>
+              </Button>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }

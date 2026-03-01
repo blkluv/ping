@@ -289,7 +289,7 @@ function OwnerSignInInner() {
                         </div>
                         <Input
                           {...field}
-                          placeholder="e.g. ping402"
+                          placeholder="HAHZ"
                           className="pl-7"
                           autoCapitalize="none"
                           autoCorrect="off"

@@ -15,7 +15,7 @@ export default async function Image({
   const handle = decodeURIComponent(params.handle).trim().toLowerCase();
 
   let title = `@${handle}`;
-  let subtitle = "Paid pings via Solana x402 (HTTP 402 Payment Required).";
+  let subtitle = "Paid tips via Solana x402 (HTTP 402 Payment Required).";
 
   try {
     const profile = await getProfileByHandle(handle);
@@ -47,7 +47,7 @@ export default async function Image({
           {subtitle}
         </div>
         <div style={{ marginTop: 44, fontSize: 22, color: "#8f8fa0" }}>
-          ping402 · Solana micropayments · x402 paywall
+          · Solana tips ·
         </div>
       </div>
     ),

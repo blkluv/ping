@@ -3,10 +3,10 @@ import { z } from "zod";
 const SiteUrlSchema = z.string().url();
 
 export const siteConfig = {
-  name: "ping402",
-  title: "ping402 — paid pings that get answered",
+  name: "tipme.bio",
+  title: "tipme.bio — paid tips that get delivered publicly",
   description:
-    "A pay-per-message inbox built on Solana settlement and x402 (HTTP 402 Payment Required).",
+    "A pay-per-message inbox for tips built on Solana",
 } as const;
 
 export function getSiteUrl(): string {

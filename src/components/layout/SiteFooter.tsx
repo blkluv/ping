@@ -21,10 +21,10 @@ export function SiteFooter() {
                 402
               </span>
             </span>
-            <span>ping402</span>
+            <span>TipMe.bio</span>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            A paid inbox built on Solana and x402. Turn “send a message” into a
+            A paid inbox built on Solana. Turn “send a message” into a
             single, verifiable action: pay → deliver → triage.
           </p>
         </div>
@@ -51,7 +51,7 @@ export function SiteFooter() {
           <div className="text-sm font-semibold">Creators</div>
           <div className="grid gap-2 text-sm">
             <Link className="text-muted-foreground hover:text-foreground" href="/ping">
-              Send a ping
+              Send a Tip
             </Link>
             <Link className="text-muted-foreground hover:text-foreground" href="/owner-signin">
               Claim a handle
@@ -71,13 +71,9 @@ export function SiteFooter() {
 
       <div className="border-t">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <div>© {year} ping402.</div>
+          <div>© {year} tipme.bio</div>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
-            <span>Solana settlement</span>
-            <span aria-hidden="true">·</span>
-            <span>x402 paywalls</span>
-            <span aria-hidden="true">·</span>
-            <span>HTTP-native</span>
+            <span>Solana tips</span>
           </div>
         </div>
       </div>
