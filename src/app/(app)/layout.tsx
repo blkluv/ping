@@ -10,8 +10,7 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
 
   try {
     session = await getOwnerSession();
-  } catch (err) {
-    // Treat session parsing/verification errors as "not signed in"
+  } catch {
     session = null;
   }
 
