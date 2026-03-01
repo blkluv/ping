@@ -15,7 +15,8 @@ const OptionalUrlString = z.preprocess((value) => {
 }, z.string().url().optional());
 
 const ServerEnvSchema = z.object({
-  NEXT_PUBLIC_CONVEX_URL: UrlString.optional(),
+  // 🔒 REQUIRED (Convex depends on this)
+  NEXT_PUBLIC_CONVEX_URL: UrlString,
 
   X402_NETWORK: z
     .enum([SOLANA_DEVNET_CHAIN_ID, SOLANA_MAINNET_CHAIN_ID])
@@ -28,7 +29,7 @@ const ServerEnvSchema = z.object({
   DEMO_VIDEO_URL: OptionalUrlString,
   PITCH_DECK_URL: OptionalUrlString,
 
-  // ⚠️ Make optional here — enforce in API layer instead
+  // keep optional if you want homepage safe
   PING402_JWT_SECRET: z.string().min(32).optional(),
 });
 
@@ -43,16 +44,7 @@ export function getEnvServer(): EnvServer {
 
   if (!result.success) {
     console.error("❌ ENV VALIDATION ERROR:", result.error.flatten());
-    // Return minimal safe defaults instead of crashing homepage
-    cached = {
-      X402_NETWORK: SOLANA_DEVNET_CHAIN_ID,
-      X402_FACILITATOR_URL: "https://x402.org/facilitator",
-      NEXT_PUBLIC_CONVEX_URL: undefined,
-      DEMO_VIDEO_URL: undefined,
-      PITCH_DECK_URL: undefined,
-      PING402_JWT_SECRET: undefined,
-    };
-    return cached;
+    throw new Error("Invalid server environment configuration");
   }
 
   cached = result.data;
