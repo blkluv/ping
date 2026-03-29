@@ -38,7 +38,7 @@ export default async function PingComposePage({
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0">
           <h1 className="h3 truncate">
-            {meta.label} ping ({meta.priceUsd})
+            {meta.label} tip ({meta.priceUsd})
           </h1>
           <p className="muted">{meta.description}</p>
         </div>
