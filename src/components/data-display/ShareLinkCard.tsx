@@ -29,7 +29,7 @@ async function copyText(text: string) {
 export function ShareLinkCard({
   url,
   title = "Share your link",
-  description = "Anyone can send you a paid ping from this URL.",
+  description = "Anyone can send you a paid tip from this URL.",
   toastSuccess = "Copied link.",
 }: {
   url: string;
