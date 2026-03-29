@@ -42,7 +42,7 @@ export default async function ReceiptPage({
           <Badge variant="outline">{receipt.tier}</Badge>
         </div>
         <p className="muted">
-          Verifiable on-chain proof that a ping was paid for.
+          Verifiable on-chain proof that a tip was paid for.
         </p>
       </header>
 
