@@ -94,7 +94,7 @@ export default async function MessageDetailPage({
               payer <span className="font-mono">{shortAddress(message.payer)}</span>
             </span>
           </div>
-          <CardTitle className="text-base">Ping</CardTitle>
+          <CardTitle className="text-base">Tip</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-1">
