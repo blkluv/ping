@@ -39,7 +39,7 @@ export default async function PingLandingPage({
         <CardContent className="space-y-2 text-sm text-muted-foreground">
           <p>
             If a handle is unclaimed, you can claim it for free (Solana signature) and start
-            receiving paid pings.
+            receiving paid tips.
           </p>
           <div className="flex flex-wrap gap-2">
             <Button asChild variant="outline" size="sm">
