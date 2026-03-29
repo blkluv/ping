@@ -100,7 +100,7 @@ export default async function HomePage() {
             <CardHeader className="space-y-2">
               <CardTitle className="text-base">Watch the demo</CardTitle>
               <CardDescription>
-                A quick walkthrough of the paid ping flow: choose a creator, pick a tier, pay with Solana Pay, and get a verifiable receipt.
+                A quick walkthrough of the paid tip flow: choose a creator, pick a tier, pay with Solana Pay, and get a verifiable receipt.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
@@ -168,7 +168,7 @@ export default async function HomePage() {
             <CardHeader className="space-y-2">
               <CardTitle className="text-base">3) Pay & it's delivered</CardTitle>
               <p className="text-sm text-muted-foreground">
-                No payment? no ping. solana says{" "}
+                No payment? no tip. solana says{" "}
                 <code className="rounded bg-muted px-1 py-0.5">PAYMENT-SIGNATURE</code> proof,
                 then your message goes through.
               </p>
@@ -187,7 +187,7 @@ export default async function HomePage() {
             </Badge>
           </div>
           <p className="muted">
-            You only pay when you send a Tip. Keep enough balance for fees and the requested
+            You only pay when you send a tip. Keep enough balance for fees and the requested
             token (shown at checkout).
           </p>
         </div>
