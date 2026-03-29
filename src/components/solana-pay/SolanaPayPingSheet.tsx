@@ -384,7 +384,7 @@ export function SolanaPayPingSheet({
         disabled={sheetDisabled}
         onClick={openSheet}
       >
-        Pay &amp; send ping
+        Pay &amp; send tip
       </Button>
 
       <Dialog open={open} onOpenChange={(next) => (next ? setOpen(true) : closeSheet())}>
@@ -395,7 +395,7 @@ export function SolanaPayPingSheet({
                 <DialogTitle className="text-xl">Checkout</DialogTitle>
                 <DialogDescription className="text-sm">
                   Pay <span className="font-mono">@{toHandle}</span> for a{" "}
-                  <span className="font-medium">{tierConfig.label}</span> ping.
+                  <span className="font-medium">{tierConfig.label}</span> tip.
                 </DialogDescription>
               </div>
               <Badge variant="secondary" className="h-fit">
