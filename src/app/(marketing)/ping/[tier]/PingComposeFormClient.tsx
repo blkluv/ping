@@ -88,7 +88,7 @@ export function PingComposeFormClient({
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="e.g. Alex"
+                        placeholder="e.g. Hahz"
                         maxLength={80}
                         autoComplete="name"
                       />
@@ -129,7 +129,7 @@ export function PingComposeFormClient({
                   <FormControl>
                     <Textarea
                       {...field}
-                      placeholder="Write your ping…"
+                      placeholder="Write your tip note…"
                       maxLength={280}
                       className="min-h-[140px] resize-y"
                     />
@@ -168,7 +168,7 @@ export function PingComposeFormClient({
             {recipient && !canPay ? (
               <p className="text-xs text-muted-foreground">
                 Enter a message to pay {tierConfig.priceUsd} and deliver your{" "}
-                {tierConfig.label.toLowerCase()} ping.
+                {tierConfig.label.toLowerCase()} tip.
               </p>
             ) : null}
           </form>
