@@ -15,7 +15,7 @@ export default async function Image({
   const handle = decodeURIComponent(params.handle).trim().toLowerCase();
 
   let title = `@${handle}`;
-  let subtitle = "Paid tips via Solana x402 (HTTP 402 Payment Required).";
+  let subtitle = "Paid tips via Solana.";
 
   try {
     const profile = await getProfileByHandle(handle);
