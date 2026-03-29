@@ -21,7 +21,7 @@ export function FundingCta({
         </div>
 
         <p className="text-xs text-muted-foreground">
-          The x402 paywall will request an on-chain payment before delivering your ping. Make
+          The x402 paywall will request an on-chain payment before delivering your tip. Make
           sure your wallet has enough balance for fees and the required asset.
         </p>
 
