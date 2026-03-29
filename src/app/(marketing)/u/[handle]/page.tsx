@@ -29,7 +29,7 @@ export async function generateMetadata({
 
   return {
     title,
-    description: `Send a paid ping to @${decodedHandle} via Solana x402, or claim this handle for free to receive paid pings.`,
+    description: `Send a paid tip to @${decodedHandle} via Solana, or claim this handle for free to receive paid tips.`,
     alternates: { canonical },
     openGraph: {
       title,
@@ -68,7 +68,7 @@ export default async function UserProfilePage({
               <Badge variant="outline">unclaimed</Badge>
             </div>
             <p className="text-sm text-muted-foreground">
-              This handle hasn’t been claimed yet. Claim it to receive paid pings.
+              This handle hasn’t been claimed yet. Claim it to receive paid tips.
             </p>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -172,7 +172,7 @@ export default async function UserProfilePage({
       </Card>
 
       <section className="space-y-3">
-        <h2 className="h4">Send a paid ping</h2>
+        <h2 className="h4">Send a paid tip</h2>
         <div className="grid gap-3 sm:grid-cols-3">
           {PING_TIER_ORDER.map((tier) => {
             const tierConfig = getPingTierConfig(tier);
@@ -193,7 +193,7 @@ export default async function UserProfilePage({
           })}
         </div>
         <p className="text-xs text-muted-foreground">
-          Sending a ping requires an x402-priced Solana payment.{" "}
+          Sending a tip requires a Solana payment.{" "}
           <Link className="underline underline-offset-4" href="/#how-it-works">
             Learn how it works
           </Link>
@@ -204,7 +204,7 @@ export default async function UserProfilePage({
       <ShareLinkCard
         url={shareUrl}
         title={`Share @${profile.handle}`}
-        description="Let anyone send you a paid ping from this URL."
+        description="Let anyone send you a paid tip from this URL."
         toastSuccess="Copied share link."
       />
     </div>
